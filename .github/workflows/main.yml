@@ -21,8 +21,8 @@ jobs:
         sudo apt-get install -y python3-pip python3-dev
         python3 -m pip install --upgrade pip
         pip3 install prefect psycopg2  # Install dependencies using system Python
-        prefect --version
-        psycopg2 --version
+        # prefect --version
+        # psycopg2 --version
 
     - name: Run Python script
       run: |
