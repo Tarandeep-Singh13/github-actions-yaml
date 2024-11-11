@@ -3,8 +3,8 @@ name: Run Python Script Every Minute
 
 on:
   schedule:
-    - cron: "*/1 * * * *"  # This will run every minute
-  workflow_dispatch:  # This allows you to manually trigger the workflow as well
+    - cron: "*/1 * * * *"  
+  workflow_dispatch:  
 
 jobs:
   run-script:
@@ -16,13 +16,11 @@ jobs:
 
     - name: Set up Python (use pre-installed version)
       run: |
-        # Install necessary dependencies for the system Python
         sudo apt-get update
         sudo apt-get install -y python3-pip python3-dev
         python3 -m pip install --upgrade pip
-        pip3 install prefect psycopg2  # Install dependencies using system Python
-        # prefect --version
-        # psycopg2 --version
+        pip3 install prefect psycopg2  
+        
 
     - name: Run Python script
       run: |
